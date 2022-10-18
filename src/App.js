@@ -1,7 +1,9 @@
+import { Rotas } from './shared/routes/Rotas';
 
-
-export const  App = () => {
+export const App = () => {
   return (
-    <p>Projeto CISAM</p>
+    <div className="App">
+      <Rotas></Rotas>
+    </div>
   );
 };
