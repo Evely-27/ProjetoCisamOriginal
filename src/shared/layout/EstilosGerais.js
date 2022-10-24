@@ -2,9 +2,11 @@ import styled from 'styled-components';
 
 
  export const Title = styled.h1`
-     color: #f00;
+     color: #000;
      font-size: 60px;
-
+     font-weight: 600;
+     font-size: 20px;
+     line-height: 51px;
 
 `
 
@@ -15,5 +17,4 @@ export const  Container = styled.div `
     height: 100vh;
     background-color: #fff;
     min-width: 100vh;
-
 `

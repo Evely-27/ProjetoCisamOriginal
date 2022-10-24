@@ -1,7 +1,7 @@
 // import React, { useState } from 'react'
 import './login.css';
 import { MdOutlinePersonOutline, MdLockOutline } from "react-icons/md";
-import Logo from './../../assets/logo-cisam.jpg';
+import Logo from '../../assets/logo-cisam.jpg';
 import { Container } from '../../shared/layout/EstilosGerais';
 import { useNavigate } from 'react-router-dom';
 // import { HiEye,HiEyeOff } from "react-icons/hi";
