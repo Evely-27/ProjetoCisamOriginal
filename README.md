@@ -14,7 +14,7 @@ Este projeto foi desenvolvido pelo Projeto Intergrador da Faculdade Senac Pernam
 
 ## Tecnologias usadas: 
 
-* [ReacrJS](https://reactjs.org/docs/getting-started.html)
+* [ReactJS](https://reactjs.org/docs/getting-started.html)
 * [NodeJS](https://nodejs.org/en/download/) 
 * [Visual Studio Code](https://code.visualstudio.com/download)
 * [JavaScript](https://www.javascript.com/)
