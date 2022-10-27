@@ -1,4 +1,4 @@
-
+import { useNavigate } from 'react-router-dom';
 import { Tabela } from "../../shared/components/Tabela";
 import listConsultas from "../../shared/data/consultas.json";
 import { Container, Row, Stack } from "react-bootstrap";
@@ -8,7 +8,14 @@ import { FormDataConsulta } from "../../shared/components/FormDataConsulta";
 import { Title } from "../../shared/layout/EstilosGerais";
 import { BarraNav } from "../../shared/components";
 
+
 export const FiltrosConsultas = () => {
+    const navigate = useNavigate();
+
+    const handleClick = () =>{
+        navigate('/gerenciador-filtros');
+    }
+
     return (
         <Container fluid="sx" >
             <Stack d="auto">
@@ -27,7 +34,7 @@ export const FiltrosConsultas = () => {
                         <MdClear size={20} />
                         Limpar Filtros
                     </Button>
-                    <Button variant="success" size="sm">
+                    <Button variant="success" size="sm" onClick={handleClick}>
                         <MdAdd size={20} />
                         Adicionar Filtros
                     </Button>
