@@ -1,11 +1,8 @@
 import { Title } from "../../shared/layout/EstilosGerais";
 import { useNavigate } from 'react-router-dom';
-import { Tabela } from "../../shared/components/Tabela";
-import listConsultas from "../../shared/data/consultas.json";
-import { Container, Row, Stack } from "react-bootstrap";
-import { MdListAlt, MdAdd, MdClear } from "react-icons/md";
+import { Container, Stack } from "react-bootstrap";
+import { MdListAlt } from "react-icons/md";
 import Button from 'react-bootstrap/Button';
-import { FormDataConsulta } from "../../shared/components/FormDataConsulta";
 import { BarraNav } from "../../shared/components";
 
 
@@ -15,6 +12,7 @@ export const  GerenciadorFiltro= () => {
     const handleClick = () =>{
         navigate('/consultas-geral');
     }
+
 
     return ( 
         <Container fluid="sx">
@@ -26,8 +24,34 @@ export const  GerenciadorFiltro= () => {
                 </Stack>
                 <div className="Traco" style={{height:"1px", backgroundColor:"#000" }}></div>
             </Stack>
-            <Container >
-                <Button variant="success" size="sm" onClick={handleClick} style={{float: 'right' }} >
+
+            
+            <Container style={{ marginLeft: "0" }}>
+                <Stack direction="horizontal" gap={3} style={{marginTop:"8vh"}}>
+                    <div>Nome do Filtro
+                        <select class = "Select do filtro" >
+                            
+                            <option>Id</option>
+                            <option>CPF</option>
+                            <option>Código de Consulta</option>
+                            <option>Cartão SUS</option>
+                            <option>Telefone</option>
+                            <option>Email</option>
+                        </select>
+                        </div>
+
+                        <form>
+                            <div className='NomeDoFiltro'>Filtrar por:
+                            <input 
+                            type="text"
+                            />
+                            </div>
+                        </form>
+                        </Stack>
+                </Container>
+
+            <Container style ={{display: 'flex', justifyContent: 'right', position: 'absolute' , bottom: 40, right: 40}}>
+                <Button variant="success" size="sm" onClick={handleClick}>
                         Aplicar
                 </Button>
             </Container>
