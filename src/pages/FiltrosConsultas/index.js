@@ -20,11 +20,10 @@ export const FiltrosConsultas = () => {
         <Container fluid="sx" >
             <Stack d="auto">
               <BarraNav/>
-                <Stack direction="horizontal" gap={3} style={{borderBottom: "10px", padding: '4px', alignItems: "center" }}>
+                <Stack direction="horizontal" gap={3} style={{borderBottom: "5px solid", padding: '4px', alignItems: "center" }}>
                     <MdFilterAlt size={20} />
                     <Title>Filtrar Resultados</Title>
                 </Stack>
-                <div className="Traco" style={{height:"5px", backgroundColor:"#000" }}></div>
             </Stack>
             <Container style={{ marginLeft: "0" }}>
 
