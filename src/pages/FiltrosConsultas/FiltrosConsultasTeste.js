@@ -4,22 +4,43 @@ import { useNavigate } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 
 import { FormDataConsulta } from "../../shared/components/FormDataConsulta";
-import listConsultas from "../../shared/data/consultas.json";
 import { Title } from "../../shared/layout/EstilosGerais";
-import { Tabela } from "../../shared/components/Tabela";
-import { BarraNav } from "../../shared/components";
+import { BarraNav, Pacientes } from "../../shared/components";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 
-export const FiltrosConsultas = () => {
+export const FiltrosConsultasTeste = () => {
 
 
-    const navigate = useNavigate();
+   const navigate = useNavigate();
 
     const handleClick = () =>{
         navigate('/gerenciador-filtros');
     }
+      
 
 
+    const [pacientes, setPacientes] = useState([]);
+  
+
+  
+  
+  // chamar essa função toda ver que queria atuzalizar a lista,puxa-la 
+    function atualizarLista() {
+      axios.get('https://iot.14mob.com/api-fiap/public/index.php/users').then( response => {
+        setPacientes(response.data.users);
+          console.log(response);
+      })
+  
+    }
+    
+  useEffect(() => {
+  
+      atualizarLista(); // somente chama-la se der certo
+    },[])
+  
+  
 
     return (
         <Container fluid="sx" >
@@ -44,7 +65,7 @@ export const FiltrosConsultas = () => {
                     </Button>
                 </Stack>
                 <Row style={{ marginTop: "20px", marginLeft:'10px'}}>
-                    <Tabela listaTabela={listConsultas} />
+                    <Pacientes usuarios={pacientes} atualizarLista= {e => {atualizarLista()}} />
                 </Row>
             </Container>
         </Container >

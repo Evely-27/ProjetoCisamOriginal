@@ -2,7 +2,7 @@
 
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { FiltrosConsultas, GerenciadorFiltro, Login } from '../../pages';
+import {FiltrosConsultasTeste,  GerenciadorFiltroTeste, Login } from '../../pages';
 
 
 export const Rotas = () => {
@@ -10,8 +10,11 @@ export const Rotas = () => {
         <BrowserRouter>
         <Routes>
             <Route  path="/" element={<Login />} />
-            <Route  path="/consultas-geral" element={<FiltrosConsultas />} />
-            <Route  path="/gerenciador-filtros" element={<GerenciadorFiltro />} />
+            <Route  path="/consultas-geral" element={<FiltrosConsultasTeste />} />
+            <Route  path="/gerenciador-filtros" element={<GerenciadorFiltroTeste />} />
+
+            {/* <Route  path="/consultas-geral" element={<FiltrosConsultas />} />
+            <Route  path="/gerenciador-filtros" element={<GerenciadorFiltro />} /> */}
         </Routes>
         </BrowserRouter>
     );
