@@ -1,9 +1,16 @@
-import  'bootstrap/dist/css/bootstrap.min.css' ;
+import { MdDelete, MdModeEditOutline } from 'react-icons/md';
 import {Table , Container } from "react-bootstrap";
+import { useNavigate } from 'react-router-dom';
+import  'bootstrap/dist/css/bootstrap.min.css' ;
 import axios from "axios";
-import { MdFilterAlt } from 'react-icons/md';
 
 export const Pacientes = (props) => {
+    
+    const navigate = useNavigate();
+
+    const handleClick = () =>{
+        navigate('/confirmar-consulta');
+    }
 
     function removerPaciente(id){
         console.log('funcionando' + id);
@@ -33,7 +40,11 @@ export const Pacientes = (props) => {
             { props.usuarios.map( pacientes => {
                 return (
                     <tr key={pacientes.id}>
-                        <td><MdFilterAlt size={20} onClick={ event => removerPaciente(pacientes.id) } /></td>
+                        <td>
+                            <MdDelete size={20}  onClick={ event => removerPaciente(pacientes.id) } />
+                            <MdModeEditOutline size={20} onClick={handleClick} />
+                            
+                            </td>
                         <td>{pacientes.id}</td>
                         <td>{pacientes.name}</td>
                         <td>{pacientes.email}</td>
