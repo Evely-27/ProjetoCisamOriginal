@@ -1,6 +1,6 @@
 import  'bootstrap/dist/css/bootstrap.min.css' ;
 import {Table , Container } from "react-bootstrap";
-import { MdFilterAlt } from "react-icons/md";
+import { MdClear, MdFilterAlt } from "react-icons/md";
 
 
 export const Tabela = ({ listaTabela }) => {
@@ -10,10 +10,10 @@ export const Tabela = ({ listaTabela }) => {
             <Table striped bordered hover>
                 <thead>
                     <tr>
+                        <th> Ações </th>
                         <th>id
                         <MdFilterAlt/>
                         </th>
-                        
                         <th>Nome</th>
                         <th>CPF</th>
                         <th>Código  Consulta</th>

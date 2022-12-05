@@ -1,30 +1,34 @@
-import { useNavigate } from 'react-router-dom';
-import { Tabela } from "../../shared/components/Tabela";
-import listConsultas from "../../shared/data/consultas.json";
-import { Container, Row, Stack } from "react-bootstrap";
 import { MdFilterAlt, MdAdd, MdClear } from "react-icons/md";
+import { Container, Row, Stack } from "react-bootstrap";
+import { useNavigate } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
+
 import { FormDataConsulta } from "../../shared/components/FormDataConsulta";
+import listConsultas from "../../shared/data/consultas.json";
 import { Title } from "../../shared/layout/EstilosGerais";
+import { Tabela } from "../../shared/components/Tabela";
 import { BarraNav } from "../../shared/components";
 
 
 export const FiltrosConsultas = () => {
+
+
     const navigate = useNavigate();
 
     const handleClick = () =>{
         navigate('/gerenciador-filtros');
     }
 
+
+
     return (
         <Container fluid="sx" >
             <Stack d="auto">
               <BarraNav/>
-                <Stack direction="horizontal" gap={3} style={{borderBottom: "10px", padding: '4px', alignItems: "center" }}>
+                <Stack direction="horizontal" gap={3} style={{borderBottom: "5px solid", padding: '4px', alignItems: "center" }}>
                     <MdFilterAlt size={20} />
                     <Title>Filtrar Resultados</Title>
                 </Stack>
-                <div className="Traco" style={{height:"5px", backgroundColor:"#000" }}></div>
             </Stack>
             <Container style={{ marginLeft: "0" }}>
 
