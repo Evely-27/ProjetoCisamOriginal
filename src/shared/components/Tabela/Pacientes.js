@@ -15,8 +15,7 @@ export const Pacientes = (props) => {
     function removerPaciente(id){
         console.log('funcionando' + id);
   
-        axios.delete("https://iot.14mob.com/api-fiap/public/index.php/users/" + id).then( response => {
-            alert('Deu certo removi o usuario')
+        axios.delete("http://localhost:3001/api/v1/paciente/" + id).then( response => {
   
            props.atualizarLista();
   
@@ -30,7 +29,7 @@ export const Pacientes = (props) => {
             <thead>
             <tr>
             <th>Ações</th>
-            <th>ID</th>
+            <th>CPF</th>
             <th>Nome</th>
             <th>Email</th>
             </tr>
@@ -39,14 +38,14 @@ export const Pacientes = (props) => {
         <tbody> 
             { props.usuarios.map( pacientes => {
                 return (
-                    <tr key={pacientes.id}>
+                    <tr key={pacientes.cpf_paciente}>
                         <td>
-                            <MdDelete size={20}  onClick={ event => removerPaciente(pacientes.id) } />
+                            <MdDelete size={20}  onClick={ event => removerPaciente(pacientes.cpf_paciente) } />
                             <MdModeEditOutline size={20} onClick={handleClick} />
                             
                             </td>
-                        <td>{pacientes.id}</td>
-                        <td>{pacientes.name}</td>
+                        <td>{pacientes.cpf_paciente}</td>
+                        <td>{pacientes.nomePaciente}</td>
                         <td>{pacientes.email}</td>
                         
                     </tr>

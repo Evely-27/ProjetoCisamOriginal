@@ -1,6 +1,6 @@
 import { MdFilterAlt, MdAdd, MdClear } from "react-icons/md";
 import { Container, Row, Stack } from "react-bootstrap";
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 
 import { FormDataConsulta } from "../../shared/components/FormDataConsulta";
@@ -14,7 +14,8 @@ export const FiltrosConsultasTeste = () => {
 
 
    const navigate = useNavigate();
-
+   const location = useLocation();
+   console.log(location);
     const handleClick = () =>{
         navigate('/gerenciador-filtros');
     }
@@ -27,17 +28,34 @@ export const FiltrosConsultasTeste = () => {
   
   
   // chamar essa função toda ver que queria atuzalizar a lista,puxa-la 
-    function atualizarLista() {
-      axios.get('https://iot.14mob.com/api-fiap/public/index.php/users').then( response => {
+    function atualizarLista(filtro) {
+        if(filtro && filtro.valor){
+            axios.post("http://localhost:3001/api/v1/paciente/", {
+                filtro: filtro.filtro,
+                valor: filtro.valor
+            }).then( response => {
+                console.log(response.data);
+                setPacientes(response.data.lista);
+            }).catch((err) => console.log(err));
+    }
+        else{
+            console.log("Loading inicial");
+            axios.post("http://localhost:3001/api/v1/paciente/").then( response => {
+                console.log(response.data);
+                setPacientes(response.data.lista);
+            }).catch((err) => console.log(err));
+        }
+
+/*       axios.get('https://iot.14mob.com/api-fiap/public/index.php/users').then( response => {
         setPacientes(response.data.users);
           console.log(response);
-      })
+      }) */
   
     }
     
   useEffect(() => {
   
-      atualizarLista(); // somente chama-la se der certo
+      atualizarLista(location.state); // somente chama-la se der certo
     },[])
   
   
