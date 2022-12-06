@@ -4,10 +4,9 @@ Este projeto foi desenvolvido pelo Projeto Intergrador da Faculdade Senac Pernam
 
 ## Integrantes:
  
-* (Marco Braz)
+* Marco Braz
 * Evely Santos
 * Henrique Moraes
-* Matheus Cavalcante
 * Gabriel Richard
 * Débora Silva
 * Victor Porto Padilha
