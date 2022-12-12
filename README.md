@@ -20,10 +20,12 @@ Este projeto foi desenvolvido pelo Projeto Intergrador da Faculdade Senac Pernam
 * [React Bootstrap](https://react-bootstrap.github.io/getting-started/introduction/)
 
 
-### Criar projeto ReactJS com Typescript
+### Reproduzir o projeto
 
-* Em uma pasta para o projeto, rodar: npx create-react-app nomeprojeto
-* No novo arquivo criado, rodar: npm start 
+* Clonar o repositorio no github para o frontend: [GitHub-Projeto CISAM](https://github.com/Evely-27/ProjetoCisamOriginal.git)
+* No novo arquivo criado, rodar para instalar as dependências: npm install 
+* Clonar repositório no github para o backend: [GitHub-Projeto CISAM-backend](https://github.com/padv/projeto-CISAM-backend)
+
 
 ## Anotações do desenvolvemnto:
 * O uso do "refactor" no git é para "refatoração" já que somente organizamos e limpamos o código.
